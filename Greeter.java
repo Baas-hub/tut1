@@ -17,14 +17,14 @@ public class Greeter {
   }
 
   public static void main(String[] args) {
-    if(args.length < 3) {
-        System.err.println("A minimum of 3 args is required");
-        return; 
-    }
+    try {
     String language = args[0];
     String country = args[1];
     String name = args[2];
     Greeter greeter = new Greeter(language, country, name);
     System.out.println(greeter.sayHello());
+    } catch (Exception e) {
+        System.err.println("3 arguments are required!");
+    }
   }
 }
